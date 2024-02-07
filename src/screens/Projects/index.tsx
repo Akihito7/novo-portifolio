@@ -31,7 +31,7 @@ export function Projects() {
             id: "2",
             spanDescription: "Attractions",
             Name: "Attractions.",
-            description: "Site feito para mostrar um pouco dos pontos turísticos mais visitados, os queridinhos pelo povo, na verdade os 4 mais visitados, mas existem outros tão legais quanto esses!",
+            description: "Explore nosso site dedicado aos quatro pontos turísticos mais populares, amados pelo público, espero que isso te motive a procurar outros pontos turísticos pelo Brasil!",
             technologyUsed: "React js e Framer Motion",
             color : "linear-gradient(180deg,#b1e5f9,#f4d2fe)",
             githubLink : "https://github.com/Akihito7/attractionsBrazil",

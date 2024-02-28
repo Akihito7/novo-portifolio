@@ -21,7 +21,10 @@ export function Menu({ selected }) {
 
     return (
         <Container>
-            <Logo>Akihito</Logo>
+            <Link href="/" >
+
+                <Logo>Akihito</Logo>
+            </Link>
 
             <ContainerNavigation>
                 <Navigation

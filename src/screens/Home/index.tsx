@@ -32,7 +32,6 @@ export function Home() {
     const navigate = useNavigate();
     return (
         <>
-            <Design src="designhome.svg" />
             <Container>
                 <Menu selected={"/"} />
                 <Body>

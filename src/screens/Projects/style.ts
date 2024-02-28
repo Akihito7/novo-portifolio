@@ -9,7 +9,7 @@ height: 100vh;
 background-color: ${theme.colors.black.main};
 
 @media screen and (min-width: 486px) and (max-width: 786px) {
-height: 100vh;
+height: auto;
 
 }
 

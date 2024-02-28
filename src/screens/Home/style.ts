@@ -20,6 +20,11 @@ height: 80vh;
 display: flex;
 background-color: ${theme.colors.black.main};
 
+align-items: center;
+justify-content: space-evenly;
+
+
+
 @media screen and (max-width: 485px){
 display: flex;
 flex-direction: column;
@@ -47,7 +52,6 @@ display: none;
 `
 export const ContainerWelcome = styled.div`
 
-width: 50vw;
 height: 80vh;
 display: flex;
 flex-direction: column;
@@ -212,7 +216,7 @@ width: 10rem;
 
 export const ContainerPresentation = styled.div`
 
-width: 50vw;
+
 height: 80vh;
 
 display: flex;

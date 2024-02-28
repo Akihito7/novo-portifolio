@@ -58,7 +58,7 @@ export function Home() {
                         </ContentWelcome>
                     </ContainerWelcome>
                     <ContainerPresentation>
-                        <ImageProfile src="profile.png" alt="imagem do perfil" />
+                        <ImageProfile src="profileRedes.png" alt="imagem do perfil" />
                         <MyNameText>Guilherme Akihito</MyNameText>
                         <ContainerGithub>
                             <IconGithub src="githubicon.png" alt="imagem do github" />

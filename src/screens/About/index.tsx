@@ -28,7 +28,7 @@ export function About() {
       <Menu selected={"about"} />
       <Main>
         <ContainerBio>
-          <ImageProfile src="profile.png"></ImageProfile>
+          <ImageProfile src="profileRedes.png"></ImageProfile>
           <TextBio>
             Sou o <NameBio>Guilherme Akihito,</NameBio> tenho 21 anos e moro em São Paulo. Há três anos, entrei no mundo da programação, inspirado pelos vídeos do Gustavo Guanabara no YouTube. Essa paixão se tornou minha vocação, levando-me à faculdade de Ciências da Computação, onde estou no 4º semestre.
 

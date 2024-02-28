@@ -80,7 +80,7 @@ margin-top: 0;
 }
 `
 export const ImageProfile = styled.img`
-width: 12rem;
+width: 14rem;
 height: 14rem;
 
 @media screen and (max-width: 485px){

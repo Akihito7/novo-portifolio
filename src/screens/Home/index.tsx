@@ -28,7 +28,7 @@ export function Home() {
       }}
     >
       <Menu selected={tabSelected} changeTabSelected={changeTabSelected} />
-      <CurrentTab />
+      <CurrentTab changeTabSelected={changeTabSelected} />
     </div>
   );
 }

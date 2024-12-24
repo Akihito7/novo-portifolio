@@ -23,9 +23,13 @@ import {
   IconRedes,
   IconNavigation,
 } from "./style";
-import { Menu } from "../../../Menu";
+import { TabKeys } from "../../../../screens/Home";
 
-export function Main() {
+type MainProps = {
+  changeTabSelected: (tab: TabKeys) => void;
+};
+
+export function Main({ changeTabSelected }: MainProps) {
   return (
     <Container>
       <Body>
@@ -37,8 +41,12 @@ export function Main() {
             <IlikeChallangerText>Open to work!</IlikeChallangerText>
 
             <ContainerButtons>
-              <ButtonProject>Projetos</ButtonProject>
-              <ButtonAbout>Sobre</ButtonAbout>
+              <ButtonProject onClick={() => changeTabSelected("projects")}>
+                Projetos
+              </ButtonProject>
+              <ButtonAbout onClick={() => changeTabSelected("about")}>
+                Sobre
+              </ButtonAbout>
             </ContainerButtons>
           </ContentWelcome>
         </ContainerWelcome>

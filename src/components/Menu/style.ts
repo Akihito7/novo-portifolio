@@ -33,7 +33,7 @@ color: ${theme.colors.green.main};
 export const ContainerNavigation = styled.div`
 
 display: flex;
-gap: 2rem;
+gap: 4rem;
 `
 export const Navigation = styled.p<PropsNavigation>`
 

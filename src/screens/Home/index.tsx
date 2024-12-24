@@ -3,6 +3,7 @@ import { Main } from "../../components/home/screens/main";
 import { Menu } from "../../components/Menu";
 import { About } from "../../components/home/screens/about";
 import { Projects } from "../../components/home/screens/projects";
+import { theme } from "../../theme";
 
 const tabComponents = {
   main: Main,
@@ -24,7 +25,9 @@ export function Home() {
     <div
       style={{
         width: "100vw",
-        height: " 100vh",
+        minHeight: "100vh",
+        backgroundColor: theme.colors.black.main,
+        overflow : "none"
       }}
     >
       <Menu selected={tabSelected} changeTabSelected={changeTabSelected} />

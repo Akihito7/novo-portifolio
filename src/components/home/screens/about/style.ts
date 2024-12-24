@@ -2,14 +2,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { theme } from "../../../../theme";
 
-export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: ${theme.colors.black.main};
-  overflow-x: hidden;
-`;
+export const Container = styled.div``;
 export const Main = styled.div`
-  height: 80vh;
   padding: 0 20rem;
 
   @media screen and (min-width: 486px) and (max-width: 786px) {
@@ -49,8 +43,8 @@ export const ContainerBio = styled.div`
   }
 `;
 export const ContainerTechnology = styled.div`
-  margin-top: 10rem;
-  padding-bottom: 10rem;
+  padding: 10rem 0;
+  overflow-x: none;
 
   @media screen and (min-width: 486px) and (max-width: 786px) {
     width: 100vw;

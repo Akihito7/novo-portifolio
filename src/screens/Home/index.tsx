@@ -27,7 +27,7 @@ export function Home() {
         width: "100vw",
         minHeight: "100vh",
         backgroundColor: theme.colors.black.main,
-        overflow : "none"
+        overflow : "hidden"
       }}
     >
       <Menu selected={tabSelected} changeTabSelected={changeTabSelected} />

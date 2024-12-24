@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { theme } from "../../../../theme";
 
 export const Container = styled.div`
-  overflow-y: hidden;
+ 
   min-height: 100vh;
   width: 100vw;
 `;

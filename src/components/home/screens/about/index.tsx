@@ -16,15 +16,24 @@ import {
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { theme } from "../../../../theme";
 
+type StylesRoot = {
+  minHeight?: string;
+  height?: string;
+};
+
 export function About() {
   const [showDiv, setShowDiv] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleIconClick = () => {
     setShowDiv(!showDiv);
   };
 
+  const stylesRoot: StylesRoot =
+    windowWidth > 786 ? { height: "100vh" } : { minHeight: "100vh" };
+
   return (
-    <ScrollArea.Root style={{ height: "100vh" }}>
+    <ScrollArea.Root style={stylesRoot}>
       <ScrollArea.Viewport
         style={{
           width: "100%",
@@ -155,21 +164,22 @@ export function About() {
             </ContainerTechnology>
           </Main>
         </Container>
-        <ScrollArea.Scrollbar
-          orientation="vertical"
-          style={{
-            width: "6px",
-            borderRadius: "10px",
-          }}
-        >
-          <ScrollArea.Thumb
+        {windowWidth > 786 && (
+          <ScrollArea.Scrollbar
             style={{
-              flex : "1",
-              backgroundColor: theme.colors.green.main,
+              width: "6px",
               borderRadius: "10px",
             }}
-          />
-        </ScrollArea.Scrollbar>
+          >
+            <ScrollArea.Thumb
+              style={{
+                flex: "1",
+                backgroundColor: theme.colors.green.main,
+                borderRadius: "10px",
+              }}
+            />
+          </ScrollArea.Scrollbar>
+        )}
       </ScrollArea.Viewport>
     </ScrollArea.Root>
   );

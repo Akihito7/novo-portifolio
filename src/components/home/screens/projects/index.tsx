@@ -9,17 +9,19 @@ import {
 
 import { CardProjects } from "../../../CardProjects";
 import { Menu } from "../../../Menu";
+import { UseTranslate } from "../../../../translations";
 
-export function Projects() {
-  const [selectedId, setSelectedId] = useState(null);
+export function Projects({ lang }: { lang: string }) {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const t = new UseTranslate("projects", lang);
 
   const works = [
     {
       id: "1",
       spanDescription: "AkFinances",
       Name: "AkFinances.",
-      description:
-        "Controle suas finanças com facilidade em poucos cliques! Gerencie gastos e ganhos de forma simples, com gráficos detalhados para uma visão clara. Você no comando do seu dinheiro!",
+      description: t.t("akfinancesDescription"),
       technologyUsed: "React js, Typescript e Api.",
       color: "linear-gradient(180deg,#f3cbab,#feedca)",
       githubLink: "https://github.com/Akihito7/akfinances",
@@ -29,8 +31,7 @@ export function Projects() {
       id: "2",
       spanDescription: "Attractions",
       Name: "Attractions.",
-      description:
-        "Explore nosso site dedicado aos quatro pontos turísticos mais populares, amados pelo público, espero que isso te motive a procurar outros pontos turísticos pelo Brasil!",
+      description: t.t("attractionDescription"),
       technologyUsed: "React js e Framer Motion",
       color: "linear-gradient(180deg,#b1e5f9,#f4d2fe)",
       githubLink: "https://github.com/Akihito7/attractionsBrazil",
@@ -38,7 +39,7 @@ export function Projects() {
     },
   ];
 
-  const setSelected = (itemId) => {
+  const setSelected = (itemId: string) => {
     if (selectedId === itemId) return setSelectedId(null);
     setSelectedId(itemId);
   };
@@ -46,7 +47,7 @@ export function Projects() {
   return (
     <Container>
       <Main>
-        <Title>Projetos que realizei! 🚀</Title>
+        <Title>{t.t("title")}</Title>
         <ContainerProjects>
           {works.map((item) => (
             <DivFramerMotion

@@ -12,8 +12,18 @@ const tabComponents = {
 };
 export type TabKeys = keyof typeof tabComponents;
 
+export type Lang = "pt-br" | "en-us";
+
 export function Home() {
   const [tabSelected, setTabSelected] = useState<TabKeys>("main");
+  const [lang, setLang] = useState<Lang>(
+    (localStorage.getItem("lang") as Lang) ?? "pt-br"
+  );
+
+  function handleLangChange(lang: Lang) {
+    localStorage.setItem("lang", lang);
+    setLang(lang);
+  }
 
   function changeTabSelected(tab: TabKeys) {
     setTabSelected(tab);
@@ -27,11 +37,16 @@ export function Home() {
         width: "100vw",
         minHeight: "100vh",
         backgroundColor: theme.colors.black.main,
-        overflow : "hidden"
+        overflow: "hidden",
       }}
     >
-      <Menu selected={tabSelected} changeTabSelected={changeTabSelected} />
-      <CurrentTab changeTabSelected={changeTabSelected} />
+      <Menu
+        selected={tabSelected}
+        changeTabSelected={changeTabSelected}
+        lang={lang}
+        setLang={handleLangChange}
+      />
+      <CurrentTab changeTabSelected={changeTabSelected} lang={lang} />
     </div>
   );
 }

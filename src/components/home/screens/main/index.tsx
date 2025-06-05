@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Container,
   Body,
@@ -24,28 +22,33 @@ import {
   IconNavigation,
 } from "./style";
 import { TabKeys } from "../../../../screens/Home";
+import { UseTranslate } from "../../../../translations";
 
 type MainProps = {
   changeTabSelected: (tab: TabKeys) => void;
+  lang: string;
 };
 
-export function Main({ changeTabSelected }: MainProps) {
+export function Main({ changeTabSelected, lang }: MainProps) {
+  const translator = new UseTranslate("home", lang);
   return (
     <Container>
       <Body>
         <ContainerWelcome>
           <ContentWelcome>
-            <OlaText>Olá pessoa, eu sou </OlaText>
+            <OlaText>{translator.t("greetings")}</OlaText>
             <Title>Akihito.</Title>
-            <FullStackText>Desenvolvedor full-stack! 👨‍💻</FullStackText>
-            <IlikeChallangerText>Open to work!</IlikeChallangerText>
+            <FullStackText>{translator.t("fullStack")}</FullStackText>
+            <IlikeChallangerText>
+              {translator.t("openToWork")}
+            </IlikeChallangerText>
 
             <ContainerButtons>
               <ButtonProject onClick={() => changeTabSelected("projects")}>
-                Projetos
+                {translator.t("projectsButton")}
               </ButtonProject>
               <ButtonAbout onClick={() => changeTabSelected("about")}>
-                Sobre
+                {translator.t("aboutButton")}
               </ButtonAbout>
             </ContainerButtons>
           </ContentWelcome>
@@ -60,9 +63,7 @@ export function Main({ changeTabSelected }: MainProps) {
             </UserGithub>
           </ContainerGithub>
 
-          <MyDescription>
-            Estudante de ciências da computação e apaixonado por tecnologia!
-          </MyDescription>
+          <MyDescription>{translator.t("description")}</MyDescription>
           <ContainerIconsRedes>
             <IconNavigation>
               <IconRedes src="xicon.png" alt="icone do twitter" />

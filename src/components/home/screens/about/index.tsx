@@ -16,14 +16,9 @@ import {
 } from "./style";
 
 import dayjs from "dayjs";
-
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { theme } from "../../../../theme";
-
-type StylesRoot = {
-  minHeight?: string;
-  height?: string;
-};
+import { UseTranslate } from "../../../../translations";
 
 const DATE_INITAL_GBM = dayjs().subtract(13, "months");
 const GBM_WORK_INFO = {
@@ -35,38 +30,29 @@ const GBM_WORK_INFO = {
   timeAsIntern: dayjs().subtract(4, "months").diff(DATE_INITAL_GBM, "months"),
 };
 
-export function About() {
+export function About({ lang }: { lang: string }) {
   const [showDiv, setShowDiv] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const t = new UseTranslate("about", lang);
 
   const handleIconClick = () => {
     setShowDiv(!showDiv);
   };
 
-  const stylesRoot: StylesRoot =
+  const stylesRoot =
     windowWidth > 786 ? { height: "100vh" } : { minHeight: "100vh" };
 
   return (
     <ScrollArea.Root style={stylesRoot}>
-      <ScrollArea.Viewport
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-      >
+      <ScrollArea.Viewport style={{ width: "100%", height: "100%" }}>
         <Container style={{ height: "100%" }}>
           <Design src="designAbout.svg" />
+          <Design src="designAbout.svg" />
 
-          <Design src="designAbout.svg"></Design>
           <Main>
             <ContainerBio>
-              <ImageProfile src="profileRedes.png"></ImageProfile>
-              <TextBio>
-                Desenvolvedor Full-Stack com experiência em JavaScript, Next.js
-                e NestJS, focado em resolver bugs, otimizar sistemas e construir
-                soluções completas do zero. Busco criar soluções eficientes e
-                escaláveis, sempre aprimorando minhas habilidades.
-              </TextBio>
+              <ImageProfile src="profileRedes.png" />
+              <TextBio>{t.t("bio")}</TextBio>
             </ContainerBio>
 
             <ContainerExperience>
@@ -77,7 +63,7 @@ export function About() {
                   marginBottom: "16px",
                 }}
               >
-                Experiência
+                {t.t("experienceTitle")}
               </h2>
 
               <div
@@ -110,11 +96,13 @@ export function About() {
                       }}
                       target="_blank"
                     >
-                      GBM Tech & Control
+                      {t.t("company")}
                     </a>
                     <span style={{ fontSize: "14px", color: "#666" }}>
                       {GBM_WORK_INFO.timeTotal}{" "}
-                      {GBM_WORK_INFO.timeTotal > 1 ? "meses" : "mês"}
+                      {GBM_WORK_INFO.timeTotal > 1
+                        ? t.t("months")
+                        : t.t("month")}
                     </span>
                   </div>
 
@@ -144,13 +132,13 @@ export function About() {
                       />
                       <div>
                         <strong style={{ fontSize: "16px" }}>
-                          Desenvolvedor full stack júnior
+                          {t.t("juniorTitle")}
                         </strong>
                         <div style={{ fontSize: "14px", color: "#555" }}>
                           {GBM_WORK_INFO.timeAsJuniorDeveloper}{" "}
                           {GBM_WORK_INFO.timeAsJuniorDeveloper > 1
-                            ? "meses"
-                            : "mês"}
+                            ? t.t("months")
+                            : t.t("month")}
                         </div>
                       </div>
                     </div>
@@ -169,11 +157,13 @@ export function About() {
                       />
                       <div>
                         <strong style={{ fontSize: "16px" }}>
-                          Desenvolvedor full stack — Estagiário
+                          {t.t("internTitle")}
                         </strong>
                         <div style={{ fontSize: "14px", color: "#555" }}>
                           {GBM_WORK_INFO.timeAsIntern}{" "}
-                          {GBM_WORK_INFO.timeAsIntern > 1 ? "meses" : "mês"}
+                          {GBM_WORK_INFO.timeAsIntern > 1
+                            ? t.t("months")
+                            : t.t("month")}
                         </div>
                       </div>
                     </div>
@@ -183,105 +173,36 @@ export function About() {
             </ContainerExperience>
 
             <ContainerTechnology>
-              <TechnologyTitle>Conhecimentos! 📖</TechnologyTitle>
+              <TechnologyTitle>{t.t("skillsTitle")}</TechnologyTitle>
               <ContainerIcons>
-                <IconsTechnology
-                  src="html.svg"
-                  alt="icone do html"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-                <IconsTechnology
-                  src="css.svg"
-                  alt="icone do css"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-                <IconsTechnology
-                  src="js.svg"
-                  alt="icone do javascript"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-
-                <IconsTechnology
-                  src="react.svg"
-                  alt="icone do react"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-
-                <IconsTechnology
-                  src="nestjs.svg"
-                  alt="icone do nest js"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-
-                <IconsTechnology
-                  src="typescript.svg"
-                  alt="icone do typescript"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-
-                <IconsTechnology
-                  src="java.svg"
-                  alt="icone do java"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
-
-                <IconsTechnology
-                  src="spring.svg"
-                  alt="icone do spring"
-                  onClick={handleIconClick}
-                  whileHover={{ scale: 1.4, rotate: 360 }}
-                  whileTap={{
-                    scale: 0.8,
-                    rotate: -360,
-                    borderRadius: "100%",
-                  }}
-                />
+                {[
+                  "html.svg",
+                  "css.svg",
+                  "js.svg",
+                  "react.svg",
+                  "nestjs.svg",
+                  "typescript.svg",
+                  "java.svg",
+                  "spring.svg",
+                ].map((icon, idx) => (
+                  <IconsTechnology
+                    key={idx}
+                    src={icon}
+                    alt={`icone de ${icon}`}
+                    onClick={handleIconClick}
+                    whileHover={{ scale: 1.4, rotate: 360 }}
+                    whileTap={{
+                      scale: 0.8,
+                      rotate: -360,
+                      borderRadius: "100%",
+                    }}
+                  />
+                ))}
               </ContainerIcons>
             </ContainerTechnology>
           </Main>
         </Container>
+
         {windowWidth > 786 && (
           <ScrollArea.Scrollbar
             style={{

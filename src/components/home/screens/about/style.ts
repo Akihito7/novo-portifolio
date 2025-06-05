@@ -48,7 +48,7 @@ export const ContainerBio = styled.div`
   }
 `;
 export const ContainerTechnology = styled.div`
-  padding: 10rem 0;
+  padding: 6rem 0;
   overflow-x: none;
   
 
@@ -86,7 +86,7 @@ export const NameBio = styled.span`
   }
 `;
 export const TextBio = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
   color: ${theme.colors.white.text};
   font-weight: 400;
@@ -97,7 +97,7 @@ export const TextBio = styled.p`
   }
 `;
 export const TechnologyTitle = styled.h2`
-  font-size: 2.6rem;
+  font-size: 2rem;
   font-family: "Poppins", sans-serif;
   color: ${theme.colors.white.text};
   font-weight: 500;
@@ -122,4 +122,48 @@ export const IconsTechnology = styled(motion.img)`
     width: 4rem;
     height: 4rem;
   }
+`;
+
+
+export const ContainerExperience = styled.div`
+margin-top : 6rem;
+
+@media screen and (min-width: 486px) and (max-width: 786px) {
+    width: 100vw;
+    padding: 2rem 3rem 6rem 3rem;
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 485px) {
+    width: 100vw;
+    padding: 2rem 3rem 6rem 3rem;
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+`
+
+export const VerticalLine = styled.div`
+
+position: absolute;
+left: 11px;
+top: 12px;
+width: 2px;
+bottom: 27px;
+background-color: #ccc;
+
+
+    @media screen and (max-width: 485px) {
+      bottom : 35px
+  }
+
+    @media screen and (max-width: 440px) {
+      bottom : 55px
+  }
+
+     @media screen and (max-width: 300px) {
+      bottom : 80px
+  }
+
 `;

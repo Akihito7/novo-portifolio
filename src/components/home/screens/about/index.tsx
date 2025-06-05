@@ -11,7 +11,11 @@ import {
   ContainerIcons,
   ContainerTechnology,
   TechnologyTitle,
+  ContainerExperience,
+  VerticalLine,
 } from "./style";
+
+import dayjs from "dayjs";
 
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { theme } from "../../../../theme";
@@ -19,6 +23,16 @@ import { theme } from "../../../../theme";
 type StylesRoot = {
   minHeight?: string;
   height?: string;
+};
+
+const DATE_INITAL_GBM = dayjs().subtract(13, "months");
+const GBM_WORK_INFO = {
+  timeTotal: dayjs().diff(DATE_INITAL_GBM, "months"),
+  timeAsJuniorDeveloper: dayjs().diff(
+    DATE_INITAL_GBM.add(9, "months"),
+    "months"
+  ),
+  timeAsIntern: dayjs().subtract(4, "months").diff(DATE_INITAL_GBM, "months"),
 };
 
 export function About() {
@@ -48,21 +62,125 @@ export function About() {
             <ContainerBio>
               <ImageProfile src="profileRedes.png"></ImageProfile>
               <TextBio>
-                Sou o <NameBio>Guilherme Akihito,</NameBio> tenho 21 anos e moro
-                em São Paulo. Há três anos, entrei no mundo da programação,
-                inspirado pelos vídeos do Gustavo Guanabara no YouTube. Essa
-                paixão se tornou minha vocação, levando-me à faculdade de
-                Ciências da Computação, onde estou no 4º semestre. Além da
-                graduação, busquei aprimoramento fazendo cursos online, muitos
-                deles na Rocktseat. Aprendi Html, Css, Javascript, React.js,
-                React Native e Node.js, solidificando minhas habilidades. Minha
-                fascinação por tecnologia vai além dos estudos formais. É um
-                estilo de vida. Tenho grandes sonhos e estou determinado a
-                torná-los realidade. Estou animado para seguir aprendendo,
-                crescer profissionalmente e enfrentar novos desafios. Seja
-                bem-vindo à minha jornada na empolgante área da tecnologia!
+                Desenvolvedor Full-Stack com experiência em JavaScript, Next.js
+                e NestJS, focado em resolver bugs, otimizar sistemas e construir
+                soluções completas do zero. Busco criar soluções eficientes e
+                escaláveis, sempre aprimorando minhas habilidades.
               </TextBio>
             </ContainerBio>
+
+            <ContainerExperience>
+              <h2
+                style={{
+                  fontSize: "20px",
+                  fontWeight: "600",
+                  marginBottom: "16px",
+                }}
+              >
+                Experiência
+              </h2>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  alignItems: "flex-start",
+                }}
+              >
+                <img
+                  src="gbmtech_logo.jpeg"
+                  alt="company logo"
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "6px",
+                    objectFit: "contain",
+                  }}
+                />
+
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <a
+                      href="https://www.linkedin.com/company/gbmtech/posts/?feedView=all"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        color: "#0a66c2",
+                        textDecoration: "none",
+                      }}
+                      target="_blank"
+                    >
+                      GBM Tech & Control
+                    </a>
+                    <span style={{ fontSize: "14px", color: "#666" }}>
+                      {GBM_WORK_INFO.timeTotal}{" "}
+                      {GBM_WORK_INFO.timeTotal > 1 ? "meses" : "mês"}
+                    </span>
+                  </div>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      marginTop: "20px",
+                      gap: "28px",
+                      position: "relative",
+                      paddingLeft: "28px",
+                    }}
+                  >
+                    <VerticalLine />
+
+                    <div style={{ position: "relative" }}>
+                      <div
+                        style={{
+                          position: "absolute",
+                          left: "-21px",
+                          top: "7px",
+                          height: "10px",
+                          width: "10px",
+                          backgroundColor: "#0073b1",
+                          borderRadius: "50%",
+                        }}
+                      />
+                      <div>
+                        <strong style={{ fontSize: "16px" }}>
+                          Desenvolvedor full stack júnior
+                        </strong>
+                        <div style={{ fontSize: "14px", color: "#555" }}>
+                          {GBM_WORK_INFO.timeAsJuniorDeveloper}{" "}
+                          {GBM_WORK_INFO.timeAsJuniorDeveloper > 1
+                            ? "meses"
+                            : "mês"}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{ position: "relative" }}>
+                      <div
+                        style={{
+                          position: "absolute",
+                          left: "-21px",
+                          top: "8px",
+                          height: "10px",
+                          width: "10px",
+                          backgroundColor: "#ccc",
+                          borderRadius: "50%",
+                        }}
+                      />
+                      <div>
+                        <strong style={{ fontSize: "16px" }}>
+                          Desenvolvedor full stack — Estagiário
+                        </strong>
+                        <div style={{ fontSize: "14px", color: "#555" }}>
+                          {GBM_WORK_INFO.timeAsIntern}{" "}
+                          {GBM_WORK_INFO.timeAsIntern > 1 ? "meses" : "mês"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ContainerExperience>
 
             <ContainerTechnology>
               <TechnologyTitle>Conhecimentos! 📖</TechnologyTitle>

@@ -184,4 +184,10 @@ export const Circle = styled.div<{ color: string }>`
 
 export const ExperienceText = styled.div`
   margin-left: 24px; 
+  
+
+
+   @media screen and (max-width: 485px) {
+    font-size: 1.2rem;
+  }
 `;

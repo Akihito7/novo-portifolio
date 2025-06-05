@@ -160,15 +160,6 @@ export const VerticalLine = styled.div`
   width: 0.2rem;
   background-color: #ccc;
 
-  @media screen and (max-width: 485px) {
-    bottom: 36px;
-  }
-  @media screen and (max-width: 440px) {
-    bottom: 56px;
-  }
-  @media screen and (max-width: 300px) {
-    bottom: 80px;
-  }
 `;
 
 export const ExperienceItem = styled.div`

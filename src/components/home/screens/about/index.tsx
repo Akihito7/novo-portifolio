@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Container,
   Design,
@@ -13,6 +13,10 @@ import {
   TechnologyTitle,
   ContainerExperience,
   VerticalLine,
+  ExperienceItem,
+  Circle,
+  ExperienceText,
+  ExperienceList,
 } from "./style";
 
 import dayjs from "dayjs";
@@ -84,7 +88,7 @@ export function About({ lang }: { lang: string }) {
                   }}
                 />
 
-                <div style={{ flex: 1 }}>
+                <div>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <a
                       href="https://www.linkedin.com/company/gbmtech/posts/?feedView=all"
@@ -95,6 +99,7 @@ export function About({ lang }: { lang: string }) {
                         textDecoration: "none",
                       }}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       {t.t("company")}
                     </a>
@@ -106,31 +111,12 @@ export function About({ lang }: { lang: string }) {
                     </span>
                   </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      marginTop: "20px",
-                      gap: "28px",
-                      position: "relative",
-                      paddingLeft: "28px",
-                    }}
-                  >
+                  <ExperienceList>
                     <VerticalLine />
 
-                    <div style={{ position: "relative" }}>
-                      <div
-                        style={{
-                          position: "absolute",
-                          left: "-21px",
-                          top: "7px",
-                          height: "10px",
-                          width: "10px",
-                          backgroundColor: "#0073b1",
-                          borderRadius: "50%",
-                        }}
-                      />
-                      <div>
+                    <ExperienceItem>
+                      <Circle color="#0073b1" />
+                      <ExperienceText>
                         <strong style={{ fontSize: "16px" }}>
                           {t.t("juniorTitle")}
                         </strong>
@@ -140,22 +126,12 @@ export function About({ lang }: { lang: string }) {
                             ? t.t("months")
                             : t.t("month")}
                         </div>
-                      </div>
-                    </div>
+                      </ExperienceText>
+                    </ExperienceItem>
 
-                    <div style={{ position: "relative" }}>
-                      <div
-                        style={{
-                          position: "absolute",
-                          left: "-21px",
-                          top: "8px",
-                          height: "10px",
-                          width: "10px",
-                          backgroundColor: "#ccc",
-                          borderRadius: "50%",
-                        }}
-                      />
-                      <div>
+                    <ExperienceItem>
+                      <Circle color="#ccc" />
+                      <ExperienceText>
                         <strong style={{ fontSize: "16px" }}>
                           {t.t("internTitle")}
                         </strong>
@@ -165,9 +141,9 @@ export function About({ lang }: { lang: string }) {
                             ? t.t("months")
                             : t.t("month")}
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                      </ExperienceText>
+                    </ExperienceItem>
+                  </ExperienceList>
                 </div>
               </div>
             </ContainerExperience>

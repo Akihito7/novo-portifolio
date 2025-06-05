@@ -144,26 +144,52 @@ margin-top : 6rem;
 
 `
 
+
+export const ExperienceList = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-left: 28px;
+`;
+
 export const VerticalLine = styled.div`
+  position: absolute;
+  left: 3.8rem;
+  top: 12px;   
+  bottom: 28px; 
+  width: 0.2rem;
+  background-color: #ccc;
 
-position: absolute;
-left: 1.1rem;
-top: 1.2rem;
-width: .2rem;
-bottom: 2.7rem;
-background-color: #ccc;
-
-
-    @media screen and (max-width: 485px) {
-      bottom : 3.5rem
+  @media screen and (max-width: 485px) {
+    bottom: 36px;
   }
-
-    @media screen and (max-width: 440px) {
-      bottom : 5.5rem
+  @media screen and (max-width: 440px) {
+    bottom: 56px;
   }
-
-     @media screen and (max-width: 300px) {
-      bottom : 8rem
+  @media screen and (max-width: 300px) {
+    bottom: 80px;
   }
+`;
 
+export const ExperienceItem = styled.div`
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+`;
+
+export const Circle = styled.div<{ color: string }>`
+  position: absolute;
+  left: 1.1rem; 
+  top: 7px;     
+  height: 10px;
+  width: 10px;
+  background-color: ${(props) => props.color};
+  border-radius: 50%;
+  transform: translateX(-50%);
+`;
+
+export const ExperienceText = styled.div`
+  margin-left: 24px; 
 `;

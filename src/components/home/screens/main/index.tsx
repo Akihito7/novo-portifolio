@@ -23,7 +23,7 @@ import {
 } from "./style";
 import { TabKeys } from "../../../../screens/Home";
 import { UseTranslate } from "../../../../translations";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type MainProps = {
   changeTabSelected: (tab: TabKeys) => void;
@@ -33,6 +33,19 @@ type MainProps = {
 export function Main({ changeTabSelected, lang }: MainProps) {
   const translator = new UseTranslate("home", lang);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Container>
       <Body>

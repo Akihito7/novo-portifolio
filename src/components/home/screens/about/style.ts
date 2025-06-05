@@ -150,6 +150,7 @@ export const ExperienceList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
+  padding-left: 28px;
 `;
 
 export const VerticalLine = styled.div`

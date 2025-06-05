@@ -70,81 +70,82 @@ export function About({ lang }: { lang: string }) {
                 {t.t("experienceTitle")}
               </h2>
 
-              <div
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                  alignItems: "flex-start",
-                }}
-              >
-                <img
-                  src="gbmtech_logo.jpeg"
-                  alt="company logo"
+              <div>
+                <div
                   style={{
-                    width: "60px",
-                    height: "60px",
-                    borderRadius: "6px",
-                    objectFit: "contain",
+                    display: "flex",
+                    gap: "12px",
+                    alignItems: "flex-start",
                   }}
-                />
+                >
+                  <img
+                    src="gbmtech_logo.jpeg"
+                    alt="company logo"
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "6px",
+                      objectFit: "contain",
+                    }}
+                  />
 
-                <div>
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <a
-                      href="https://www.linkedin.com/company/gbmtech/posts/?feedView=all"
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: "500",
-                        color: "#0a66c2",
-                        textDecoration: "none",
-                      }}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {t.t("company")}
-                    </a>
-                    <span style={{ fontSize: "14px", color: "#666" }}>
-                      {GBM_WORK_INFO.timeTotal}{" "}
-                      {GBM_WORK_INFO.timeTotal > 1
-                        ? t.t("months")
-                        : t.t("month")}
-                    </span>
+                  <div>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <a
+                        href="https://www.linkedin.com/company/gbmtech/posts/?feedView=all"
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "500",
+                          color: "#0a66c2",
+                          textDecoration: "none",
+                        }}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {t.t("company")}
+                      </a>
+                      <span style={{ fontSize: "14px", color: "#666" }}>
+                        {GBM_WORK_INFO.timeTotal}{" "}
+                        {GBM_WORK_INFO.timeTotal > 1
+                          ? t.t("months")
+                          : t.t("month")}
+                      </span>
+                    </div>
                   </div>
-
-                  <ExperienceList>
-                    <VerticalLine />
-
-                    <ExperienceItem>
-                      <Circle color="#0073b1" />
-                      <ExperienceText>
-                        <strong style={{ fontSize: "16px" }}>
-                          {t.t("juniorTitle")}
-                        </strong>
-                        <div style={{ fontSize: "14px", color: "#555" }}>
-                          {GBM_WORK_INFO.timeAsJuniorDeveloper}{" "}
-                          {GBM_WORK_INFO.timeAsJuniorDeveloper > 1
-                            ? t.t("months")
-                            : t.t("month")}
-                        </div>
-                      </ExperienceText>
-                    </ExperienceItem>
-
-                    <ExperienceItem>
-                      <Circle color="#ccc" />
-                      <ExperienceText>
-                        <strong style={{ fontSize: "16px" }}>
-                          {t.t("internTitle")}
-                        </strong>
-                        <div style={{ fontSize: "14px", color: "#555" }}>
-                          {GBM_WORK_INFO.timeAsIntern}{" "}
-                          {GBM_WORK_INFO.timeAsIntern > 1
-                            ? t.t("months")
-                            : t.t("month")}
-                        </div>
-                      </ExperienceText>
-                    </ExperienceItem>
-                  </ExperienceList>
                 </div>
+                <ExperienceList>
+                  <VerticalLine />
+
+                  <ExperienceItem>
+                    <Circle color="#0073b1" />
+                    <ExperienceText>
+                      <strong style={{ fontSize: "16px" }}>
+                        {t.t("juniorTitle")}
+                      </strong>
+                      <div style={{ fontSize: "14px", color: "#555" }}>
+                        {GBM_WORK_INFO.timeAsJuniorDeveloper}{" "}
+                        {GBM_WORK_INFO.timeAsJuniorDeveloper > 1
+                          ? t.t("months")
+                          : t.t("month")}
+                      </div>
+                    </ExperienceText>
+                  </ExperienceItem>
+
+                  <ExperienceItem>
+                    <Circle color="#ccc" />
+                    <ExperienceText>
+                      <strong style={{ fontSize: "16px" }}>
+                        {t.t("internTitle")}
+                      </strong>
+                      <div style={{ fontSize: "14px", color: "#555" }}>
+                        {GBM_WORK_INFO.timeAsIntern}{" "}
+                        {GBM_WORK_INFO.timeAsIntern > 1
+                          ? t.t("months")
+                          : t.t("month")}
+                      </div>
+                    </ExperienceText>
+                  </ExperienceItem>
+                </ExperienceList>
               </div>
             </ContainerExperience>
 

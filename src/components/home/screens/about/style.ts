@@ -147,23 +147,23 @@ margin-top : 6rem;
 export const VerticalLine = styled.div`
 
 position: absolute;
-left: 11px;
-top: 12px;
-width: 2px;
-bottom: 27px;
+left: 1.1rem;
+top: 1.2rem;
+width: .2rem;
+bottom: 2.7rem;
 background-color: #ccc;
 
 
     @media screen and (max-width: 485px) {
-      bottom : 35px
+      bottom : 3.5rem
   }
 
     @media screen and (max-width: 440px) {
-      bottom : 55px
+      bottom : 5.5rem
   }
 
      @media screen and (max-width: 300px) {
-      bottom : 80px
+      bottom : 8rem
   }
 
 `;
